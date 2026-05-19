@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Permitir específicamente Googlebot y otros crawlers legítimos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.rcv-digital.com/sitemap.xml

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Publicaciones de RCV-Digital — Análisis de Paid Media, CRO y Email Marketing para e-commerces Shopify en Latam.">
+<meta name="robots" content="index, follow">
+<title>Publicaciones | RCV-Digital</title>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAAkAwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAQhpQ0NQSUNDIFByb2ZpbGUAAHicY2BgPMEABCwGDAy5eSVFQe5OChGRUQrsDxgYgRAMEpOLCxhwA6Cqb9cgai/r4lGHC3CmpBYnA+kPQKxSBLQcaKQIkC2SDmFrgNhJELYNiF1eUlACZAeA2EUhQc5AdgqQrZGOxE5CYicXFIHU9wDZNrk5pckIdzPwpOaFBgNpDiCWYShmCGJwZ3AC+R+iJH8RA4PFVwYG5gkIsaSZDAzbWxkYJG4hxFQWMDDwtzAwbDuPEEOESUFiUSJYiAWImdLSGBg+LWdg4I1kYBC+wMDAFQ0LCBxuUwC7zZ0hHwjTGXIYUoEingx5DMkMekCWEYMBgyGDGQCm1j8/R2zgUAAAAddJREFUeJytkrFqKmEQhb//3wUXJMY1YGs6kyJbCSmsLa3yECLY2Zjax8jGBzCQOqSJlegGZEUQiyxYCAZxm2BSrLtMmhtzvQQuF++pZubMDHNmRgHCAdCHFO81UEqhlNojlVJorff8P3MVP0j4IkX+rk4DpFIpstksuVxuVygiWJZFoVDYJdu2DYBlWRwfH+/iUq/XZb1eSxAE4vu+nJ2dSbFYlCAIZLVaycPDg1xcXMhqtZJ8Pi+u68r9/b0AYgJkMhlOTk44Pz9nOp1Sq9V4f38nn89TrVZ5enrCdV3iOKZUKuE4Dv1+/1tCkiSICMVikTiOWS6XHB0dsdlsGA6HNBoNPM9jPp9TLpexbRvP874lNJtNiaJIXl9fJQxDsSxLOp2OhGEoSin5tWi5vb2V0Wgki8VCHMcRQDSAaZpsNhva7TbpdJokSTBNk7e3N9LpNIPBgFKpxOPjI47jEEURLy8v+1ewbZvBYEAqleLq6orn52dOT09ptVpcXl6y3W6ZTCYYhsF6vebj4wOtNSaA7/vc3d0xm83odDrkcjlubm5wHIdKpcL19TXj8ZhsNku326XX630/1E+P9C/QAFprDMMAwDAMtNYopXb2F/c7/4X/M8Eh+AS1Bclu65WU3QAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAEhElEQVR4nO2Wy2tTWxTGf/ucRFNL7IOKJUW0PqoIotAgQhVHig+KUMGBiIhDdebUiX+DjpzppBP/gDizDsRWENOgFWpKUiVUU4kxmNLz+u7Am23ObYpcuNA76Ddb66y193f2Xt/aywBiA+Fs5OabBDYJ/C8IJNoNY8yaAGl9lRpjbI6kWGy7v9P6Lb/hD33AGIPruoRh+Dvp742jKIrFtuL+DWIE0uk0juNYhkEQ0Gw2103euXMnAwMD+L5PuVxmdXUVYwxbtmwhlUoB8OPHDyRhjGH79u0A+L7/e11jjAAlEgm9fv1a1WpVX758Ua1WU6VS0czMjO7fv6/u7m4ZY2SMUV9fnyYnJ1Wr1SRJURSpWCzq5s2bAjQ+Pq7l5WVVq1Vls1kBymazqlarqlarunXrlt0zRqBUKqmFer2uKIqs/fTpU7ViHz9+bP1LS0tqNpvWPnjwoPbs2WPt69evC9C1a9es7/z58wLkuq5iKvA8D0k0Gg1GR0cZHh5mdnaWIAiYmJggk8mQTqe5fPkyYRiyuLjIgQMHuHv3LkEQEIYhV65coVQqUalUkMTIyAgA+/fvRxLNZpP379/ba44RaK/q1dVVyuUyz549I5H4JZbe3l4ymQzd3d24rkupVKLRaFAsFkkkEriuazdcWFjAGGPtffv2YYzh8+fPVCqVzgRakES9XgdgYGDAVn+9Xmfbtm1rCP/8+ZN8Pk8+n6dUKgHw7t07AIaHhwHYvXs3APPz8/i+j+M4SIr3gRaSySSXLl2iv7+fiYkJjDEsLi5SqVTYtWuXjWtJ8+XLlxw7dgzAqujt27cAZDIZduzYweDgIACFQsHGRVHUuRF1dXXx5MkT6y+Xy9y4cYMoinBddw1hx3FsruM4eJ5n77m/v59sNktfX1+MgM1tN1pH3Wg0uHfvHrVaDYDZ2VmeP38OsKb5tE4iCAKCIMDzPAA+fvzIysoKqVSK06dPk06nAZibm4uv0y7D+fl5K8Guri7NzMxIkr5//67BwUEBGhsbs3KampoSoMOHD+vBgwd6+PChrl69aiU2NzcnSSoUCpKkb9++qaenR4CVdMciTCaTGGN49eoVAD09PZw4caJTKIlEgr1793Lnzh1u377N+Pi4PZUPHz4AcOjQIQCKxSL1eh1jjD3tdV/DKIp48eKFtc+ePQvA169fbb/o7e0lCALbtj3P49OnTzandd++7wO/ldFeR7EiDMOQMAzxfZ9UKsX09DSe5+G6LqdOncJ1XYrFIoVCgdHRUUZGRnj06BFHjx61b8DU1FSMQBiGRFFEGIbk8/m1f9peA0tLS/Z+M5mMAC0sLFjf8ePHBejkyZNaXl7WPzE5OSnXdeW6rgAdOXIk9v3MmTO2Pvj1CMq+hsYYzp07Rzqdxvd9crkcKysrjI2NMTQ0BMD09DTlchmAoaEhLl68SCaTwfM83rx5Qy6Xa/0Ukti6dSsXLlwgmUwiiVwuR6PRiNXAH+eBTmg1kf8CMQKu61p2rcGi5QNiQ4njOLbrAbGcdqyX35HARmDDh9JNApsE/gJiZO/Mm1oCLwAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#131313">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#131313;color:#fff;font-family:'Montserrat',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:68px;padding:0 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,.97);border-bottom:1px solid #1e1e1e;backdrop-filter:blur(24px)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-mark{width:32px;height:32px;background:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-mark span{font-family:'Oswald',sans-serif;font-weight:700;font-size:12px;color:#131313;letter-spacing:-.02em}
+.nav-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;letter-spacing:.05em}
+.nav-back{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#545454;transition:color .2s;display:flex;align-items:center;gap:8px}
+.nav-back:hover{color:#fff}
+.pub-hero{padding:140px 60px 72px;border-bottom:1px solid #1e1e1e}
+.pub-eyebrow{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#545454;display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.pub-eyebrow::before{content:'';width:20px;height:1px;background:#545454}
+.pub-hero-h{font-family:'Oswald',sans-serif;font-size:clamp(44px,7vw,88px);font-weight:700;text-transform:uppercase;line-height:1.02;letter-spacing:-.02em;margin-bottom:24px}
+.pub-hero-h .dim{color:#545454}
+.pub-hero-sub{font-size:15px;font-weight:300;color:#b4b4b4;max-width:560px;line-height:1.85}
+.pub-filter{padding:28px 60px;border-bottom:1px solid #1e1e1e;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.flt-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#545454;margin-right:6px}
+.flt-btn{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border:1px solid #1e1e1e;background:transparent;color:#545454;cursor:pointer;transition:all .2s}
+.flt-btn:hover{border-color:#545454;color:#fff}
+.flt-btn.active{background:#fff;color:#131313;border-color:#fff}
+.pub-featured{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #1e1e1e}
+.pub-feat-vis{position:relative;overflow:hidden;background:#0a0a0a;min-height:380px}
+.feat-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:44px 44px}
+.feat-tag{position:absolute;top:28px;left:28px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#545454;border:1px solid #1e1e1e;padding:6px 12px;background:rgba(10,10,10,.88);z-index:1}
+.feat-badge{position:absolute;top:28px;right:28px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#131313;background:#fff;padding:6px 12px;z-index:1}
+.pub-feat-body{padding:60px;display:flex;flex-direction:column;justify-content:space-between;background:#131313;transition:background .3s}
+.pub-featured:hover .pub-feat-body{background:#1a1a1a}
+.feat-cat{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#545454;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.feat-cat::before{content:'';width:14px;height:1px;background:#545454}
+.feat-title{font-family:'Oswald',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;text-transform:uppercase;line-height:1.12;margin-bottom:16px;transition:color .2s}
+.pub-featured:hover .feat-title{color:#b4b4b4}
+.feat-exc{font-size:14px;font-weight:300;color:#b4b4b4;line-height:1.82;margin-bottom:28px;flex:1}
+.feat-meta{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#545454;padding-top:24px;border-top:1px solid #1e1e1e;display:flex;align-items:center;gap:10px}
+.feat-dot{width:3px;height:3px;border-radius:50%;background:#545454}
+.feat-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:1px solid #1e1e1e;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#545454;transition:all .2s;margin-top:20px;align-self:flex-start}
+.feat-cta:hover,.pub-featured:hover .feat-cta{border-color:#fff;color:#fff}
+.pub-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #1e1e1e}
+.pub-card{border-right:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;display:block;color:inherit;transition:background .3s;position:relative}
+.pub-card:hover{background:#1a1a1a}
+.pub-card.hidden{display:none}
+.pub-card-inner{padding:40px 36px;padding-bottom:64px}
+.card-cat{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#545454;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-cat::before{content:'';width:12px;height:1px;background:#545454}
+.card-title{font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;text-transform:uppercase;line-height:1.18;margin-bottom:12px;transition:color .2s}
+.pub-card:hover .card-title{color:#b4b4b4}
+.card-exc{font-size:13px;font-weight:300;color:#b4b4b4;line-height:1.75;margin-bottom:20px}
+.card-meta{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#545454;display:flex;align-items:center;gap:8px}
+.card-dot{width:3px;height:3px;border-radius:50%;background:#545454}
+.card-arrow{position:absolute;bottom:36px;right:36px;width:28px;height:28px;border:1px solid #1e1e1e;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.pub-card:hover .card-arrow{border-color:#fff;background:#fff}
+.pub-card:hover .card-arrow path{stroke:#131313}
+.pub-nl{border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;background:#0a0a0a;padding:72px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.nl-h{font-family:'Oswald',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:700;text-transform:uppercase;line-height:1.06;margin-bottom:16px}
+.nl-h .dim{color:#545454}
+.nl-sub{font-size:14px;font-weight:300;color:#b4b4b4;line-height:1.85;max-width:420px}
+.nl-form{display:flex;flex-direction:column;gap:10px}
+.nl-form input{width:100%;padding:15px 18px;background:#131313;border:1px solid #1e1e1e;color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color .2s}
+.nl-form input:focus{border-color:#545454}
+.nl-form input::placeholder{color:#545454}
+.nl-form button{width:100%;padding:16px;background:#fff;color:#131313;border:none;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.nl-form button:hover{background:#b4b4b4}
+.nl-note{font-size:11px;font-weight:300;color:#545454;margin-top:8px;line-height:1.6}
+.form-ok{display:none;padding:18px;border:1px solid #1e1e1e;background:#1a1a1a;font-size:13px;font-weight:300;color:#b4b4b4;line-height:1.6;margin-top:8px}
+footer{background:#0a0a0a;border-top:1px solid #1e1e1e;padding:28px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.ft-copy{font-size:11px;font-weight:300;color:#545454}
+.ft-links{display:flex;gap:24px}
+.ft-links a{font-size:11px;font-weight:300;color:#545454;transition:color .2s}
+.ft-links a:hover{color:#fff}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+@media(max-width:1200px){
+  #nav{padding:0 32px}
+  .pub-hero,.pub-filter{padding-left:32px;padding-right:32px}
+  .pub-featured{grid-template-columns:1fr}
+  .pub-feat-vis{min-height:220px}
+  .pub-feat-body{padding:40px 36px}
+  .pub-grid{grid-template-columns:repeat(2,1fr)}
+  .pub-nl{padding:52px 32px;gap:48px}
+  footer{padding:24px 32px}
+}
+@media(max-width:768px){
+  #nav{padding:0 20px;height:60px}
+  .pub-hero{padding:100px 20px 52px}
+  .pub-filter{padding:20px;gap:8px}
+  .pub-grid{grid-template-columns:1fr}
+  .pub-nl{grid-template-columns:1fr;padding:48px 20px;gap:32px}
+  .pub-card-inner{padding:28px 24px 60px}
+  .card-arrow{bottom:28px;right:24px}
+  footer{padding:20px;flex-direction:column;text-align:center}
+  .ft-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-mark"><span>RCV</span></div>
+    <span class="nav-name">RCV-Digital</span>
+  </a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M2 7L6 3M2 7L6 11" stroke="#545454" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Inicio
+  </a>
+</nav>
+
+<div class="pub-hero">
+  <div class="pub-eyebrow">Publicaciones</div>
+  <h1 class="pub-hero-h">Inteligencia de<br><span class="dim">mercado.</span></h1>
+  <p class="pub-hero-sub">An&aacute;lisis de Paid Media, CRO y Email Marketing con datos reales de portafolio. Sin contenido gen&eacute;rico. Publicado cada martes.</p>
+</div>
+
+<div class="pub-filter">
+  <span class="flt-label">Filtrar</span>
+  <button class="flt-btn active" onclick="filterPubs('todos',this)">Todos</button>
+  <button class="flt-btn" onclick="filterPubs('paid-media',this)">Paid Media</button>
+  <button class="flt-btn" onclick="filterPubs('email',this)">Email Marketing</button>
+  <button class="flt-btn" onclick="filterPubs('cro',this)">CRO</button>
+  <button class="flt-btn" onclick="filterPubs('estrategia',this)">Estrategia</button>
+</div>
+
+<a href="art-meta-ads.html" class="pub-featured rv" id="feat" data-cat="paid-media">
+  <div class="pub-feat-vis">
+    <div class="feat-grid"></div>
+    <div class="feat-tag">Meta Ads &middot; Shopify &middot; 2025</div>
+    <div class="feat-badge">Destacado</div>
+    <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:50%;z-index:1;opacity:.07;pointer-events:none" viewBox="0 0 800 180" preserveAspectRatio="none"><polyline points="0,150 100,118 220,132 340,78 460,98 580,44 720,60 800,24" fill="none" stroke="white" stroke-width="2"/><polygon points="0,150 100,118 220,132 340,78 460,98 580,44 720,60 800,24 800,180 0,180" fill="white" opacity=".2"/></svg>
+  </div>
+  <div class="pub-feat-body">
+    <div>
+      <div class="feat-cat">Paid Media</div>
+      <h2 class="feat-title">Los 5 errores estructurales en Meta Ads que destruyen el ROAS de tu tienda Shopify</h2>
+      <p class="feat-exc">Despu&eacute;s de auditar m&aacute;s de 20 cuentas en e-commerces Shopify de Latam, estos son los cinco patrones que se repiten sistem&aacute;ticamente en cuentas con ROAS por debajo de 2x. Y el proceso de correcci&oacute;n para cada uno.</p>
+      <span class="feat-cta">Leer an&aacute;lisis &rarr;</span>
+    </div>
+    <div class="feat-meta"><span>RCV-Digital</span><span class="feat-dot"></span><span>Marzo 2025</span><span class="feat-dot"></span><span>12 min</span></div>
+  </div>
+</a>
+
+<div class="pub-grid">
+<!-- INSERT-NEW-CARD -->
+  <a href="art-abandono-carrito.html" class="pub-card rv d1" data-cat="email">
+    <div class="pub-card-inner">
+      <div class="card-cat">Email Marketing</div>
+      <h3 class="card-title">El abandono de carrito no es un problema de email: es un problema de checkout</h3>
+      <p class="card-exc">La mayor&iacute;a optimiza el asunto del email de recuperaci&oacute;n. Nosotros optimizamos lo que pasa antes del abandono.</p>
+      <div class="card-meta"><span>Feb 2025</span><span class="card-dot"></span><span>8 min</span></div>
+    </div>
+    <div class="card-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+  </a>
+  <a href="art-benchmarks.html" class="pub-card rv d2" data-cat="cro">
+    <div class="pub-card-inner">
+      <div class="card-cat">CRO &middot; Datos</div>
+      <h3 class="card-title">Benchmarks de conversi&oacute;n para Shopify en Latam: datos reales de portafolio</h3>
+      <p class="card-exc">Tasa de conversi&oacute;n, ticket promedio y ROAS por vertical y pa&iacute;s. Referencia interna, no proyecci&oacute;n.</p>
+      <div class="card-meta"><span>Ene 2025</span><span class="card-dot"></span><span>9 min</span></div>
+    </div>
+    <div class="card-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+  </a>
+  <a href="art-escalar-ads.html" class="pub-card rv d3" data-cat="paid-media">
+    <div class="pub-card-inner">
+      <div class="card-cat">Paid Media &middot; Estrategia</div>
+      <h3 class="card-title">Cu&aacute;ndo escalar en Meta Ads: los tres indicadores que nadie menciona</h3>
+      <p class="card-exc">El ROAS no es suficiente para decidir si est&aacute;s listo. Hay tres se&ntilde;ales estructurales que deben estar en verde primero.</p>
+      <div class="card-meta"><span>Dic 2024</span><span class="card-dot"></span><span>7 min</span></div>
+    </div>
+    <div class="card-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+  </a>
+  <a href="art-welcome-series.html" class="pub-card rv" data-cat="email">
+    <div class="pub-card-inner">
+      <div class="card-cat">Klaviyo &middot; Email Marketing</div>
+      <h3 class="card-title">Welcome series: la secuencia de bienvenida con mayor impacto en la primera compra</h3>
+      <p class="card-exc">El email de bienvenida tiene la tasa de apertura m&aacute;s alta. La mayor&iacute;a lo desperdicia con un mensaje gen&eacute;rico.</p>
+      <div class="card-meta"><span>Nov 2024</span><span class="card-dot"></span><span>6 min</span></div>
+    </div>
+    <div class="card-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+  </a>
+  <a href="art-advantage-plus.html" class="pub-card rv d1" data-cat="paid-media">
+    <div class="pub-card-inner">
+      <div class="card-cat">Meta Ads</div>
+      <h3 class="card-title">Advantage+ vs campa&ntilde;as manuales: criterios de decisi&oacute;n seg&uacute;n tu tienda</h3>
+      <p class="card-exc">Meta promueve la automatizaci&oacute;n total. En algunos contextos es superior. En otros, devuelve el control demasiado pronto.</p>
+      <div class="card-meta"><span>Oct 2024</span><span class="card-dot"></span><span>8 min</span></div>
+    </div>
+    <div class="card-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+  </a>
+  <a href="art-black-friday.html" class="pub-card rv d2" data-cat="estrategia">
+    <div class="pub-card-inner">
+      <div class="card-cat">E-Commerce &middot; Estrategia</div>
+      <h3 class="card-title">Calendario de Black Friday para Shopify: las 8 semanas de preparaci&oacute;n</h3>
+      <p class="card-exc">El Black Friday no se gana en noviembre. Se gana en septiembre. La estructura de 8 semanas para preparar toda la cartera.</p>
+      <div class="card-meta"><span>Sep 2024</span><span class="card-dot"></span><span>11 min</span></div>
+    </div>
+    <div class="card-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+  </a>
+</div>
+
+<div class="pub-nl rv">
+  <div>
+    <h2 class="nl-h">Inteligencia<br><span class="dim">E-Commerce.</span></h2>
+    <p class="nl-sub">Cada martes: an&aacute;lisis como los de esta p&aacute;gina en tu inbox. Datos de portafolio real. Sin relleno gen&eacute;rico.</p>
+  </div>
+  <div>
+    <form class="nl-form" id="pubNlForm" onsubmit="subNL(event)">
+      <input type="text" id="pnl-nombre" placeholder="Nombre completo *" required>
+      <input type="email" id="pnl-email" placeholder="Email *" required>
+      <input type="text" id="pnl-pais" placeholder="Pa&iacute;s *" required>
+      <button type="submit">Suscribirme &rarr;</button>
+    </form>
+    <div id="pubNlOk" class="form-ok">
+  <div style="margin-bottom:14px;">
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="#ffffff"/><path d="M14 26.5L22 35L38 18" stroke="#131313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div style="font-family:Oswald,sans-serif;font-size:18px;font-weight:600;text-transform:uppercase;color:#fff;letter-spacing:.04em;margin-bottom:8px;">Suscripción confirmada</div>
+  <p style="font-size:13px;font-weight:300;color:#b4b4b4;line-height:1.75;text-align:center;">Recibirás <strong style="color:#fff;font-weight:500;">Inteligencia E-Commerce</strong><br>cada martes a las 8am.</p>
+</div>
+    <p class="nl-note">Sin spam. Cancela desde cualquier edici&oacute;n.</p>
+  </div>
+</div>
+
+<footer>
+  <p class="ft-copy">&copy; 2026 RCV-Digital SpA &mdash; Todos los derechos reservados</p>
+  <div class="ft-links">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#contact">Contacto</a>
+    <a href="privacy.html">Privacidad</a>
+    <a href="terms.html">T&eacute;rminos</a>
+  </div>
+</footer>
+
+<script>
+
+function filterPubs(cat, btn) {
+  document.querySelectorAll('.flt-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  var feat = document.getElementById('feat');
+  feat.style.display = (cat === 'todos' || feat.dataset.cat === cat) ? '' : 'none';
+  document.querySelectorAll('.pub-card').forEach(function(c){
+    c.classList.toggle('hidden', cat !== 'todos' && c.dataset.cat !== cat);
+  });
+}
+var obs = new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+function subNL(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('button');
+  btn.textContent='Enviando...';btn.disabled=true;
+  var fd=new FormData();
+  fd.append('email',(document.getElementById('pnl-email')||{}).value||'');
+  fd.append('nombre',(document.getElementById('pnl-nombre')||{}).value||'');
+  fd.append('pais',(document.getElementById('pnl-pais')||{}).value||'');
+  fd.append('_subject','Nuevo suscriptor Publicaciones: '+fd.get('email'));
+  fetch('https://formspree.io/f/mgoproyy',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+  .then(function(r){if(r.ok){document.getElementById('pubNlForm').style.display='none';document.getElementById('pubNlOk').style.display='flex';}else{btn.textContent=orig;btn.disabled=false;}})
+  .catch(function(){btn.textContent=orig;btn.disabled=false;});
+}
+</script>
+</body>
+</html>

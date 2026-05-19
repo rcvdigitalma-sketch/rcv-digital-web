@@ -1,0 +1,184 @@
+{
+  "name": "RCV — Publicar blog + newsletter",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "version": 1,
+      "parameters": { "hook": 2, "maxResults": 1 },
+      "mapper": {},
+      "metadata": {
+        "designer": { "x": 0, "y": 0 },
+        "restore": { "parameters": { "hook": { "label": "RCV Publicar Contenido" } } },
+        "parameters": [{ "name": "hook", "type": "hook:gateway-webhook", "label": "Webhook", "required": true }],
+        "expect": [
+          { "name": "slug",            "type": "text",   "label": "Slug del artículo (ej: art-funnel-meta-ads)" },
+          { "name": "titulo",          "type": "text",   "label": "Título del artículo" },
+          { "name": "categoria",       "type": "text",   "label": "Categoría (paid-media|email|cro)" },
+          { "name": "categoria_label", "type": "text",   "label": "Label de categoría (ej: Paid Media)" },
+          { "name": "fecha",           "type": "text",   "label": "Fecha visible (ej: May 2026)" },
+          { "name": "tiempo_lectura",  "type": "number", "label": "Minutos de lectura" },
+          { "name": "resumen",         "type": "text",   "label": "Resumen 120-150 palabras" },
+          { "name": "asunto_email",    "type": "text",   "label": "Asunto del newsletter (max 55 chars)" },
+          { "name": "preview_text",    "type": "text",   "label": "Preview text del email" },
+          { "name": "tema_publicado",  "type": "text",   "label": "Tema exacto en Google Sheets para marcar PUBLICADO" },
+          { "name": "articulo_html",   "type": "text",   "label": "HTML completo del artículo" },
+          { "name": "newsletter_html", "type": "text",   "label": "HTML completo del newsletter" }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": { "handleErrors": false, "useNewZLibDeCompress": true },
+      "mapper": {
+        "url": "https://api.github.com/repos/{{GITHUB_USERNAME}}/rcv-digital-web/contents/{{1.slug}}.html",
+        "method": "put",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer {{GITHUB_TOKEN}}" },
+          { "name": "Content-Type",  "value": "application/json" },
+          { "name": "User-Agent",    "value": "Make-RCV-Digital" },
+          { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "parseResponse": true,
+        "data": "{\"message\":\"feat: nuevo artículo - {{1.titulo}}\",\"content\":\"{{base64(1.articulo_html)}}\",\"branch\":\"main\"}"
+      },
+      "metadata": {
+        "designer": { "x": 300, "y": 0 },
+        "designer:note": "Crea el archivo HTML del artículo en GitHub → Cloudflare auto-despliega"
+      }
+    },
+    {
+      "id": 3,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": { "handleErrors": false, "useNewZLibDeCompress": true },
+      "mapper": {
+        "url": "https://api.github.com/repos/{{GITHUB_USERNAME}}/rcv-digital-web/contents/publicaciones.html",
+        "method": "get",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer {{GITHUB_TOKEN}}" },
+          { "name": "User-Agent",    "value": "Make-RCV-Digital" },
+          { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+        ],
+        "parseResponse": true
+      },
+      "metadata": {
+        "designer": { "x": 600, "y": 0 },
+        "designer:note": "Obtiene SHA y contenido actual de publicaciones.html (necesario para actualizar el archivo)"
+      }
+    },
+    {
+      "id": 4,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": { "handleErrors": false, "useNewZLibDeCompress": true },
+      "mapper": {
+        "url": "https://api.github.com/repos/{{GITHUB_USERNAME}}/rcv-digital-web/contents/publicaciones.html",
+        "method": "put",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer {{GITHUB_TOKEN}}" },
+          { "name": "Content-Type",  "value": "application/json" },
+          { "name": "User-Agent",    "value": "Make-RCV-Digital" },
+          { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "parseResponse": true,
+        "data": "{\"message\":\"feat: actualizar publicaciones con {{1.titulo}}\",\"sha\":\"{{3.data.sha}}\",\"branch\":\"main\",\"content\":\"{{base64(replace(toString(fromBase64(3.data.content)), '<!-- INSERT-NEW-CARD -->', '<!-- INSERT-NEW-CARD -->\\n  <a href=\\\"{{1.slug}}.html\\\" class=\\\"pub-card rv d1\\\" data-cat=\\\"{{1.categoria}}\\\">\\n    <div class=\\\"pub-card-inner\\\">\\n      <div class=\\\"card-cat\\\">{{1.categoria_label}}</div>\\n      <h3 class=\\\"card-title\\\">{{1.titulo}}</h3>\\n      <p class=\\\"card-exc\\\">{{1.resumen}}</p>\\n      <div class=\\\"card-meta\\\"><span>{{1.fecha}}</span><span class=\\\"card-dot\\\"></span><span>{{1.tiempo_lectura}} min</span></div>\\n    </div>\\n    <div class=\\\"card-arrow\\\"><svg width=\\\"12\\\" height=\\\"12\\\" viewBox=\\\"0 0 14 14\\\" fill=\\\"none\\\"><path d=\\\"M2 12L12 2M12 2H4M12 2V10\\\" stroke=\\\"white\\\" stroke-width=\\\"1.2\\\" stroke-linecap=\\\"round\\\"/></svg></div>\\n  </a>'))}\"}"
+      },
+      "metadata": {
+        "designer": { "x": 900, "y": 0 },
+        "designer:note": "Inserta nuevo card al inicio de pub-grid usando el punto de inserción <!-- INSERT-NEW-CARD -->"
+      }
+    },
+    {
+      "id": 5,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": { "handleErrors": false, "useNewZLibDeCompress": true },
+      "mapper": {
+        "url": "https://api.beehiiv.com/v2/publications/328b9ce7-1a7d-4f76-a38f-5a0a62fad2e2/posts",
+        "method": "post",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer 2IILYnintK6Oir0FjgLeBUOSyfSazJggYnjJquHoi60EQ9bH7qGPBh1vNIOroJQQ" },
+          { "name": "Content-Type",  "value": "application/json" }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "parseResponse": true,
+        "data": "{\"title\":\"{{1.titulo}}\",\"subtitle\":\"{{1.resumen}}\",\"content_html\":\"{{1.newsletter_html}}\",\"preview_text\":\"{{1.preview_text}}\",\"status\":\"draft\",\"content_tags\":[\"e-commerce\",\"shopify\",\"{{1.categoria}}\"]}"
+      },
+      "metadata": {
+        "designer": { "x": 1200, "y": 0 },
+        "designer:note": "Crea borrador en Beehiiv. Tú lo revisas y presionas Send cuando quieras."
+      }
+    },
+    {
+      "id": 6,
+      "module": "google-sheets:searchRows",
+      "version": 2,
+      "parameters": { "includeEmptyRows": false, "maxResults": 1 },
+      "mapper": {
+        "spreadsheetId": "1vkR76VyiE_vB5ylIP40dy6-If9r9MyOuXkc3EUtw3tg",
+        "sheetId": "TEMAS",
+        "filter": {
+          "conditions": [[{ "a": "B", "b": "{{1.tema_publicado}}", "o": "text:equal" }]]
+        },
+        "sortOrder": "asc"
+      },
+      "metadata": { "designer": { "x": 1500, "y": 0 } }
+    },
+    {
+      "id": 7,
+      "module": "google-sheets:updateRow",
+      "version": 2,
+      "parameters": {},
+      "mapper": {
+        "spreadsheetId": "1vkR76VyiE_vB5ylIP40dy6-If9r9MyOuXkc3EUtw3tg",
+        "sheetId": "TEMAS",
+        "rowNumber": "{{6.rowNumber}}",
+        "values": {
+          "E": "PUBLICADO",
+          "F": "{{1.fecha}}",
+          "G": "{{1.slug}}.html"
+        }
+      },
+      "metadata": { "designer": { "x": 1800, "y": 0 } }
+    },
+    {
+      "id": 8,
+      "module": "gmail:ActionSendEmail",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "to": "rcvdigitalma@gmail.com",
+        "subject": "✅ Publicado — {{1.titulo}}",
+        "content": "<div style=\"font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#131313;color:#fff;padding:40px\"><h2 style=\"font-family:Arial;font-size:20px;margin:0 0 24px\">Nuevo artículo publicado</h2><p style=\"margin:0 0 8px\"><b>Artículo:</b> {{1.titulo}}</p><p style=\"margin:0 0 8px\"><b>URL:</b> <a href=\"https://www.rcv-digital.com/{{1.slug}}.html\" style=\"color:#fff\">rcv-digital.com/{{1.slug}}.html</a></p><p style=\"margin:0 0 8px\"><b>Categoría:</b> {{1.categoria_label}}</p><hr style=\"border:none;border-top:1px solid #333;margin:24px 0\"><p style=\"margin:0 0 24px;color:#b4b4b4\">El borrador del newsletter está listo en Beehiiv. Revísalo y presiona Send cuando quieras.</p><a href=\"https://app.beehiiv.com\" style=\"background:#fff;color:#131313;padding:12px 24px;text-decoration:none;font-weight:bold;display:inline-block\">Ir a Beehiiv →</a><hr style=\"border:none;border-top:1px solid #333;margin:24px 0\"><p style=\"color:#555;font-size:12px\">✓ Artículo subido a GitHub (Cloudflare ya está desplegando)<br>✓ Card agregado en publicaciones.html<br>✓ Tema marcado como PUBLICADO en Google Sheets</p></div>",
+        "contentType": "html",
+        "from": "rcvdigitalma@gmail.com"
+      },
+      "metadata": { "designer": { "x": 2100, "y": 0 } }
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": true,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": { "orphans": [] },
+    "zone": "eu2.make.com"
+  }
+}

@@ -1,0 +1,22 @@
+# RCV-Digital — Cloudflare Pages Headers
+# Permite crawlers legítimos (Googlebot, Bingbot, etc.)
+# El 403 se produce cuando Cloudflare WAF bloquea bots — esto lo resuelve
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  # Permite indexación explícita
+  X-Robots-Tag: index, follow
+
+# Cache largo para assets estáticos
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sin cache para HTML (para que Google vea la versión actualizada)
+/*.html
+  Cache-Control: no-cache, must-revalidate
