@@ -1,3 +1,5 @@
 .DS_Store
 *.bak
 *.tmp
+MAKE-Escenario-Publicar.json
+MAKE-Escenario-Suscriptores.json
