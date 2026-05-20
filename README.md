@@ -38,20 +38,20 @@ Make.com (orquestador)
 
 6. Ve a [Make.com](https://make.com) → Escenario **"RCV — Publicar blog + newsletter"**
 7. Haz clic en **Run once** (triángulo ▶)
-8. Cuando pida datos en el webhook: **pega el JSON**
+8. Cuando pida datos en el webhook, pega el JSON en:
+   **`https://hook.us2.make.com/qghi77smo0du3g8rzb9aam64w2y1q2xy`**
 9. Make ejecuta automáticamente:
-   - ✅ Artículo HTML subido a GitHub
-   - ✅ Card agregado en publicaciones.html
-   - ✅ Cloudflare Pages despliega (2-3 minutos)
+   - ✅ Artículo HTML subido a GitHub → Cloudflare despliega en 2 min
    - ✅ Borrador creado en Beehiiv
    - ✅ Tema marcado PUBLICADO en Sheets
-   - ✅ Email de confirmación a rcvdigitalma@gmail.com
+   - ✅ Email de confirmación con el `card_html` listo para pegar
+10. **Paso manual (30 seg):** abre el link de GitHub del email → busca `<!-- INSERT-NEW-CARD -->` → pega el `card_html` debajo → Commit
 
 ### MARTES 8am — Enviar newsletter (30 segundos)
 
-10. Abre [Beehiiv](https://app.beehiiv.com) → ves el borrador
-11. Revisa que todo se vea bien
-12. Clic en **"Send"** → sale a toda la lista
+11. Abre [Beehiiv](https://app.beehiiv.com) → ves el borrador
+12. Revisa que todo se vea bien
+13. Clic en **"Send"** → sale a toda la lista
 
 ---
 

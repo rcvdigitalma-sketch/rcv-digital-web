@@ -27,9 +27,12 @@ CUANDO TE DEN UN TEMA, GENERA SIEMPRE ESTE JSON EXACTO (sin texto antes ni despu
   "asunto_email": "Asunto newsletter max 55 caracteres con número o dato",
   "preview_text": "Texto preview del email, 90 caracteres",
   "tema_publicado": "Tema exacto como aparece en Google Sheets para marcar PUBLICADO",
+  "card_html": "<a href=\"[slug].html\" class=\"pub-card rv d1\" data-cat=\"[categoria]\"><div class=\"pub-card-inner\"><div class=\"card-cat\">[categoria_label]</div><h3 class=\"card-title\">[titulo]</h3><p class=\"card-exc\">[resumen primeras 20 palabras]</p><div class=\"card-meta\"><span>[fecha]</span><span class=\"card-dot\"></span><span>[tiempo_lectura] min</span></div></div><div class=\"card-arrow\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 14 14\" fill=\"none\"><path d=\"M2 12L12 2M12 2H4M12 2V10\" stroke=\"white\" stroke-width=\"1.2\" stroke-linecap=\"round\"/></svg></div></a>",
   "articulo_html": "HTML completo del artículo (ver estructura abajo)",
   "newsletter_html": "HTML completo del email newsletter (ver estructura abajo)"
 }
+
+IMPORTANTE sobre card_html: es el bloque HTML listo para pegar en publicaciones.html justo después del comentario <!-- INSERT-NEW-CARD -->. Reemplaza [slug], [categoria], [categoria_label], [titulo], [resumen], [fecha], [tiempo_lectura] con los valores reales del artículo.
 
 ESTRUCTURA DEL ARTÍCULO HTML:
 Usar exactamente estas clases CSS del sitio rcv-digital.com:
