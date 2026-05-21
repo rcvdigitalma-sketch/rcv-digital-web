@@ -1558,10 +1558,14 @@ function submitNL(e) {
   var pais   = (document.getElementById('nl-pais')   ||{}).value||'';
   if (!email.trim()) return;
   btn.textContent = 'Enviando...'; btn.disabled = true;
-  fetch('https://hook.us2.make.com/opkxs7bppu8xiwyjuij28z54dt7wxjgl', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({email: email.trim(), nombre: nombre.trim(), pais: pais.trim()})
+  var fd = new FormData();
+  fd.append('email',    email.trim());
+  fd.append('nombre',   nombre.trim());
+  fd.append('pais',     pais.trim());
+  fd.append('_subject', 'Nuevo suscriptor — Inteligencia E-Commerce: ' + email.trim());
+  fd.append('_replyto', email.trim());
+  fetch('https://formspree.io/f/mgoproyy', {
+    method:'POST', body:fd, headers:{'Accept':'application/json'}
   })
   .then(function(r) {
     if (r.ok) { showOk('nlForm','nlOk'); }
