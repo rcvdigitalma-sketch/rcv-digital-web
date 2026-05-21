@@ -102,11 +102,16 @@ Google Sheets: [Abrir planilla](https://docs.google.com/spreadsheets/d/1vkR76Vyi
 
 ---
 
-## IDs y referencias
+## URLs y referencias del sistema
 
-| Recurso | ID / Valor |
+| Recurso | URL / ID |
 |---|---|
-| Beehiiv Publication | `328b9ce7-1a7d-4f76-a38f-5a0a62fad2e2` |
-| Google Sheets | `1vkR76VyiE_vB5ylIP40dy6-If9r9MyOuXkc3EUtw3tg` |
-| Cloudflare Project | `rcvdigital` (Account: `6bf7f4d8cfe325f6a84e4a9f54bb033d`) |
-| Gmail | `rcvdigitalma@gmail.com` |
+| **Sitio web** | https://www.rcv-digital.com |
+| **GitHub repo** | https://github.com/rcvdigitalma-sketch/rcv-digital-web |
+| **Webhook publicación** | `https://hook.us2.make.com/qghi77smo0du3g8rzb9aam64w2y1q2xy` |
+| **Webhook suscriptores** | `https://hook.us2.make.com/opkxs7bppu8xiwyjuij28z54dt7wxjgl` |
+| **Google Sheets** | https://docs.google.com/spreadsheets/d/1vkR76VyiE_vB5ylIP40dy6-If9r9MyOuXkc3EUtw3tg |
+| **Beehiiv** | https://app.beehiiv.com (pub: `328b9ce7-1a7d-4f76-a38f-5a0a62fad2e2`) |
+| **Formspree form** | `mgoproyy` → https://formspree.io/forms/mgoproyy |
+| **Cloudflare Pages** | `rcvdigital` (Account: `6bf7f4d8cfe325f6a84e4a9f54bb033d`) |
+| **Gmail** | `rcvdigitalma@gmail.com` |
